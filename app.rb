@@ -43,7 +43,7 @@ class App < Sinatra::Base
         return open(cache_file).read
       else
         @session.visit(url)
-        sleep 8 # waiting for getting assets 
+        sleep 4 # waiting for getting assets 
         
         @session.driver.browser.manage.window.move_to(0, 0)
         @session.driver.browser.manage.window.resize_to(800, 1200)
