@@ -28,10 +28,7 @@ class App < Sinatra::Base
     end
 
     Capybara.default_driver = :chrome
-      
     @session = Capybara::Session.new(:chrome)
-
-    FileUtils.mkdir_p("/tmp/#{hash}")
 
     url = params[:url].to_s
     halt(404, "page not found") unless url =~ /^http:\/\/qiita.com/
